@@ -6,7 +6,7 @@ Aplikasi Sebaran COVID-19 di Jawa Barat
 def ekstraksi_data():
     """
     Update Terakhir: Kamis, 9 Des 2021 07.00
-    Terkonfirmasi:
+    Terkonfirmasi: 708.189
     Penambahan/Pengurangan Terkonfirmasi: 27
     Isolasi: 923
     Penambahan/Pengurangan Isolasi:  -37
@@ -15,11 +15,11 @@ def ekstraksi_data():
     Meninggal: 14.737
     Penambahan/Pengurangan Meninggal: 0
     Kontak Erat: 572.979
-    Masih Dikarantina: 25.744
-    Discarded: 547.235
+    Dikarantina: 25.744
+    Discarded Kontak Erat: 547.235
     Suspek: 216.886
     Isolasi Suspek: 8.568
-    Discarded: 208.318
+    Discarded Suspek: 208.318
     Total Probable: 6.410
     Isolasi Probable: 276
     Sembuh Probable: 3.999
@@ -27,7 +27,24 @@ def ekstraksi_data():
     """
     hasil = dict()
     hasil['update'] = 'Kamis, 9 Des 2021 07.00'
-    hasil['terkonfirmasi'] =
+    hasil['terkonfirmasi'] = 708.189
+    hasil['perubahan_terkonfirmasi'] = 27
+    hasil['isolasi'] = 923
+    hasil['perubahan_isolasi'] = -37
+    hasil['sembuh'] = 692.383
+    hasil['perubahan_sembuh'] = 64
+    hasil['meninggal'] = 14.737
+    hasil['perubahan_meninggal'] = 0
+    hasil['kontak_erat'] = 572.979
+    hasil['dikarantina'] = 25.744
+    hasil['discarded_kontak'] = 547.235
+    hasil['suspek'] = 216.886
+    hasil['isolasi_suspek'] = 8.568
+    hasil['discarded_suspek'] = 208.318
+    hasil['total_probable'] = 6.410
+    hasil['isolasi_probable'] = 276
+    hasil['sembuh_probable'] = 3.999
+    hasil['meninggal_probable'] = 2135
     return hasil
 
 
