@@ -1,9 +1,9 @@
 """
 Aplikasi Sebaran COVID-19 di Jawa Barat
 """
-from covidwestjava import ekstraksi_data, tampilkan_data
+import covidwestjava
 
 if __name__ == '__main__':
     print('Aplikasi utama')
-    result = ekstraksi_data()
-    tampilkan_data(result)
+    result = covidwestjava.ekstraksi_data()
+    covidwestjava.tampilkan_data(result)

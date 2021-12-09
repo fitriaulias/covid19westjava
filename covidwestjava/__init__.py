@@ -1,3 +1,7 @@
+import requests
+from bs4 import BeautifulSoup
+
+
 def ekstraksi_data():
     """
     Update Terakhir: Kamis, 9 Des 2021 07.00
@@ -20,6 +24,11 @@ def ekstraksi_data():
     Sembuh Probable: 3.999
     Meninggal Probable: 2.135
     """
+    content = requests.get('https://pikobar.jabarprov.go.id/data')
+    print(content.status_code)
+    #soup = BeautifulSoup(content)
+   # print(soup.prettify())
+
     hasil = dict()
     hasil['update'] = 'Kamis, 9 Des 2021 07.00'
     hasil['terkonfirmasi'] = 708.189
