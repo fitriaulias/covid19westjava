@@ -4,71 +4,36 @@ Aplikasi Sebaran COVID-19 di Jawa Barat
 
 
 def ekstraksi_data():
-    pass
-
-
-"""
-TOTAL TERKONFIRMASI
-Jawa Barat: 708.043
- 27
-Indonesia
-4.257.685
- 196
-ISOLASI/DALAM PERAWATAN
-Jawa Barat
-923
- -37
-Indonesia
-7.526
- -106
-SELESAI ISOLASI/SEMBUH
-Jawa Barat
-692.383
- 64
-Indonesia
-4.106.292
- 298
-MENINGGAL
-Jawa Barat
-14.737
- 0
-Indonesia
-143.867
- 4
-KONTAK ERATⓘ
-572.979
-Total Kontak Erat
-25.744
-(4.49%)
-Masih Dikarantina
-547.235
-(95.51%)
-Discardedⓘ
-SUSPEKⓘ
-216.886
-Total Suspek
-8.568
-(3.95%)
-Isolasi/Dalam Perawatan
-208.318
-(96.05%)
-Discardedⓘ
-PROBABLEⓘ
-6.410
-Total Probable
-276
-(4.31%)
-Isolasi/Dalam Perawatan
-3.999
-(62.39%)
-Selesai Isolasi/Sembuh
-2.135
-(33.31%)
-Meninggal
-"""
+    """
+    Update Terakhir: Kamis, 9 Des 2021 07.00
+    Terkonfirmasi:
+    Penambahan/Pengurangan Terkonfirmasi: 27
+    Isolasi: 923
+    Penambahan/Pengurangan Isolasi:  -37
+    Sembuh: 692.383
+    Penambahan/Pengurangan Sembuh: 64
+    Meninggal: 14.737
+    Penambahan/Pengurangan Meninggal: 0
+    Kontak Erat: 572.979
+    Masih Dikarantina: 25.744
+    Discarded: 547.235
+    Suspek: 216.886
+    Isolasi Suspek: 8.568
+    Discarded: 208.318
+    Total Probable: 6.410
+    Isolasi Probable: 276
+    Sembuh Probable: 3.999
+    Meninggal Probable: 2.135
+    """
+    hasil = dict()
+    hasil['update'] = 'Kamis, 9 Des 2021 07.00'
+    hasil['terkonfirmasi'] =
+    return hasil
 
 
 def tampilkan_data(result):
+    print("Sebaran COVID-19 di Jawa Barat Berdasarkan Pikobar")
+    print(f"Update Terakhir {result['update']}")
     pass
 
 
