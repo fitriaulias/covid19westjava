@@ -24,35 +24,44 @@ def ekstraksi_data():
     Sembuh Probable: 3.999
     Meninggal Probable: 2.135
     """
-    content = requests.get('https://pikobar.jabarprov.go.id/data')
-    print(content.status_code)
+    try:
+        content = requests.get('https://pikobar.jabarprov.go.id')
+    except Exception:
+        return None
+    if content.status_code == 200:
+        print(content.text)
     #soup = BeautifulSoup(content)
    # print(soup.prettify())
 
-    hasil = dict()
-    hasil['update'] = 'Kamis, 9 Des 2021 07.00'
-    hasil['terkonfirmasi'] = 708.189
-    hasil['perubahan_terkonfirmasi'] = 27
-    hasil['isolasi'] = 923
-    hasil['perubahan_isolasi'] = -37
-    hasil['sembuh'] = 692.383
-    hasil['perubahan_sembuh'] = 64
-    hasil['meninggal'] = 14.737
-    hasil['perubahan_meninggal'] = 0
-    hasil['kontak_erat'] = 572.979
-    hasil['dikarantina'] = 25.744
-    hasil['discarded_kontak'] = 547.235
-    hasil['suspek'] = 216.886
-    hasil['isolasi_suspek'] = 8.568
-    hasil['discarded_suspek'] = 208.318
-    hasil['total_probable'] = 6.410
-    hasil['isolasi_probable'] = 276
-    hasil['sembuh_probable'] = 3.999
-    hasil['meninggal_probable'] = 2135
-    return hasil
+        hasil = dict()
+        hasil['update'] = 'Kamis, 9 Des 2021 07.00'
+        hasil['terkonfirmasi'] = 708.189
+        hasil['perubahan_terkonfirmasi'] = 27
+        hasil['isolasi'] = 923
+        hasil['perubahan_isolasi'] = -37
+        hasil['sembuh'] = 692.383
+        hasil['perubahan_sembuh'] = 64
+        hasil['meninggal'] = 14.737
+        hasil['perubahan_meninggal'] = 0
+        hasil['kontak_erat'] = 572.979
+        hasil['dikarantina'] = 25.744
+        hasil['discarded_kontak'] = 547.235
+        hasil['suspek'] = 216.886
+        hasil['isolasi_suspek'] = 8.568
+        hasil['discarded_suspek'] = 208.318
+        hasil['total_probable'] = 6.410
+        hasil['isolasi_probable'] = 276
+        hasil['sembuh_probable'] = 3.999
+        hasil['meninggal_probable'] = 2135
+        return hasil
+    else:
+        return None
 
 
 def tampilkan_data(result):
+    if result is None:
+        print("Tidak bisa menemukan data sebaran COVID-19 di Jawa Barat terkini")
+        return
     print("Sebaran COVID-19 di Jawa Barat Berdasarkan Pikobar")
     print(f"\nUpdate Terakhir {result['update']}")
     print(f"\nTotal Terkonfirmasi: {result['terkonfirmasi']}")
