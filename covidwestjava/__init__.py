@@ -28,13 +28,14 @@ def ekstraksi_data():
         content = requests.get('https://pikobar.jabarprov.go.id')
     except Exception:
         return None
+
     if content.status_code == 200:
-        print(content.text)
-    #soup = BeautifulSoup(content)
-   # print(soup.prettify())
+        soup = BeautifulSoup(content.text, 'html.parser')
+        update = soup.find('div', {'class': 'image-carousel'})
+
 
         hasil = dict()
-        hasil['update'] = 'Kamis, 9 Des 2021 07.00'
+        hasil['update'] = update #'Kamis, 9 Des 2021 07.00'
         hasil['terkonfirmasi'] = 708.189
         hasil['perubahan_terkonfirmasi'] = 27
         hasil['isolasi'] = 923
